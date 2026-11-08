@@ -6,9 +6,10 @@
 
 <style scoped lang="scss">
   .footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: #fff;
+    @include flex(center, center, row, wrap);
+
+    background-color: #efefef;
+    
+    padding: 10px 12px;
   }
 </style>

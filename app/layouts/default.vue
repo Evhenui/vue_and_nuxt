@@ -12,13 +12,15 @@
 
 <style lang="scss" scoped>
   .wrapper {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+    
     .main {
       flex: 1;
-      padding: 2rem;
+
+      padding: 16px;
     }
   }
 </style>

@@ -1333,7 +1333,7 @@ const renderSSRHeadOptions = {"omitLineBreaks":true};
 
 const NUXT_PRERENDER_NO_SSR_ROUTES = ["/index.html","/200.html","/404.html"];
 const NUXT_NO_SCRIPTS_PATTERNS = [];
-const NUXT_PAGE_PATTERNS = ["/about","/"];
+const NUXT_PAGE_PATTERNS = ["/about","/contact","/"];
 const NUXT_SSR_STREAMING = false;
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 const appRootTag = "div";
@@ -2657,7 +2657,22 @@ _Z4Vm0BJMJeyU_KFYzGBgSOBoZ4JOQn4jYmko_KtDwU,
 _LB91z6Ht2T49ncvhFWMKIA26eT4mdBc7tIFl06yLKKs
 ];
 
-const assets = {};
+const assets = {
+  "/index.mjs": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"26672-nyFRj/63ugfa1H6SSQnq1kvPBT8\"",
+    "mtime": "2026-11-08T20:09:37.488Z",
+    "size": 157298,
+    "path": "index.mjs"
+  },
+  "/index.mjs.map": {
+    "type": "application/json",
+    "etag": "\"8ae4d-ElP/h+aed45PS+Z9eaCqqApbg9E\"",
+    "mtime": "2026-11-08T20:09:37.489Z",
+    "size": 568909,
+    "path": "index.mjs.map"
+  }
+};
 
 function readAsset (id) {
   const serverDir = dirname$1(fileURLToPath(globalThis._importMeta_.url));
@@ -3567,11 +3582,13 @@ async function getIslandContext(event) {
 	};
 }
 
+const _lazy_WnkqEQ = () => Promise.resolve().then(function () { return hello$1; });
 const _lazy_YwoYFq = () => Promise.resolve().then(function () { return renderer$1; });
 const _lazy_grZu1j = () => Promise.resolve().then(function () { return errorChannel; });
 
 const handlers = [
   { route: '', handler: _VIIFbH, lazy: false, middleware: true, method: undefined },
+  { route: '/api/hello', handler: _lazy_WnkqEQ, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_YwoYFq, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_dev__/error/**', handler: _lazy_grZu1j, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: handler$1, lazy: false, middleware: false, method: undefined },
@@ -3941,6 +3958,15 @@ const styles$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
   __proto__: null,
   default: styles,
   inlinedCSS: inlinedCSS
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const hello = defineEventHandler(() => {
+  return { message: "Hello!", time: /* @__PURE__ */ new Date() };
+});
+
+const hello$1 = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: hello
 }, Symbol.toStringTag, { value: 'Module' }));
 
 // src/app/internal/tracing.ts
